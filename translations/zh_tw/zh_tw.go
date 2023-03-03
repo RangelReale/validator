@@ -15,7 +15,7 @@ import (
 
 // RegisterDefaultTranslations registers a set of default translations
 // for all built in tag's in validator; you may add your own as desired.
-func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (err error) {
+func RegisterDefaultTranslations(v validator.TranslateValidate, trans ut.Translator) (err error) {
 
 	translations := []struct {
 		tag             string
@@ -37,9 +37,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("len-string-character", "{0}字元", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("len-string-character", "{0}字元", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("len-string-character", "{0}個字元", locales.PluralRuleOther, false); err != nil {
 					return
@@ -52,9 +52,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 				if err = ut.Add("len-items", "{0}必須包含{1}", false); err != nil {
 					return
 				}
-				//if err = ut.AddCardinal("len-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("len-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("len-items-item", "{0}項", locales.PluralRuleOther, false); err != nil {
 					return
@@ -128,9 +128,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("min-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("min-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("min-string-character", "{0}個字元", locales.PluralRuleOther, false); err != nil {
 					return
@@ -143,9 +143,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 				if err = ut.Add("min-items", "{0}必須至少包含{1}", false); err != nil {
 					return
 				}
-				//if err = ut.AddCardinal("min-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("min-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("min-items-item", "{0}項", locales.PluralRuleOther, false); err != nil {
 					return
@@ -219,9 +219,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("max-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("max-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("max-string-character", "{0}個字元", locales.PluralRuleOther, false); err != nil {
 					return
@@ -234,9 +234,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 				if err = ut.Add("max-items", "{0}最多只能包含{1}", false); err != nil {
 					return
 				}
-				//if err = ut.AddCardinal("max-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("max-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("max-items-item", "{0}項", locales.PluralRuleOther, false); err != nil {
 					return
@@ -340,9 +340,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("lt-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("lt-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("lt-string-character", "{0}個字元", locales.PluralRuleOther, false); err != nil {
 					return
@@ -356,9 +356,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("lt-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("lt-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("lt-items-item", "{0}項", locales.PluralRuleOther, false); err != nil {
 					return
@@ -460,9 +460,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("lte-string-character", "{0} character", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("lte-string-character", "{0} character", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("lte-string-character", "{0}個字元", locales.PluralRuleOther, false); err != nil {
 					return
@@ -476,9 +476,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("lte-items-item", "{0} item", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("lte-items-item", "{0} item", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("lte-items-item", "{0}項", locales.PluralRuleOther, false); err != nil {
 					return
@@ -579,9 +579,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("gt-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("gt-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("gt-string-character", "{0}個字元", locales.PluralRuleOther, false); err != nil {
 					return
@@ -595,9 +595,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("gt-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("gt-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("gt-items-item", "{0}項", locales.PluralRuleOther, false); err != nil {
 					return
@@ -695,9 +695,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("gte-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("gte-string-character", "{0}個字元", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("gte-string-character", "{0}個字元", locales.PluralRuleOther, false); err != nil {
 					return
@@ -711,9 +711,9 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 					return
 				}
 
-				//if err = ut.AddCardinal("gte-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
+				// if err = ut.AddCardinal("gte-items-item", "{0}項", locales.PluralRuleOne, false); err != nil {
 				//	return
-				//}
+				// }
 
 				if err = ut.AddCardinal("gte-items-item", "{0}項", locales.PluralRuleOther, false); err != nil {
 					return

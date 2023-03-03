@@ -15,7 +15,7 @@ import (
 
 // RegisterDefaultTranslations registers a set of default translations
 // for all built in tag's in validator; you may add your own as desired.
-func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (err error) {
+func RegisterDefaultTranslations(v validator.TranslateValidate, trans ut.Translator) (err error) {
 	translations := []struct {
 		tag             string
 		translation     string
@@ -124,7 +124,7 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 		{
 			tag: "min",
 			customRegisFunc: func(ut ut.Translator) (err error) {
-        
+
 				if err = ut.Add("min-string", "{0} deve essere lungo almeno {1}", false); err != nil {
 					return
 				}
@@ -432,7 +432,7 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 		{
 			tag: "lte",
 			customRegisFunc: func(ut ut.Translator) (err error) {
-        
+
 				if err = ut.Add("lte-string", "{0} deve essere lungo al massimo {1}", false); err != nil {
 					return
 				}

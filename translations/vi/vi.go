@@ -15,7 +15,7 @@ import (
 
 // RegisterDefaultTranslations registers a set of default translations
 // for all built in tag's in validator; you may add your own as desired.
-func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (err error) {
+func RegisterDefaultTranslations(v validator.TranslateValidate, trans ut.Translator) (err error) {
 	translations := []struct {
 		tag             string
 		translation     string
